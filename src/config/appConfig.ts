@@ -3,6 +3,8 @@
  * Edit this file to customize default subjects, chapters, and columns
  */
 
+export const APP_VERSION = '1.1.0'; // Increment this version to force a data reset for users
+
 // Default columns that appear for each subject
 export const DEFAULT_COLUMNS = [
   { name: 'PYQs', type: 'pyqs' as const },

@@ -32,6 +32,7 @@ export interface AppState {
   subjects: Subject[];
   theme: 'light' | 'dark';
   lastModified: string;
+  version?: string; // Optional version for data versioning
 }
 
 export interface ProgressStats {
