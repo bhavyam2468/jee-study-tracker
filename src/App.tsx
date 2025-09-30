@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { StudyProvider, useStudy } from './contexts/StudyContext';
 import { Header } from './components/Header/Header';
 import { SubjectTable } from './components/SubjectTable/SubjectTable';

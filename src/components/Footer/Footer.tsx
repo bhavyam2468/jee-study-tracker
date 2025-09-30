@@ -1,4 +1,3 @@
-import React from 'react';
 import { useStudy } from '../../contexts/StudyContext';
 import styles from './Footer.module.css';
 

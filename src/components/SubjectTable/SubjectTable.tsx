@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import type { Subject } from '../../types';
 import { useStudy } from '../../contexts/StudyContext';
 import { Checkball } from '../Checkball/Checkball';

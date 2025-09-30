@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useStudy } from '../../contexts/StudyContext';
 import { exportToPDF, exportToJSON } from '../../services/pdfService';
 import styles from './Header.module.css';
 
 export function Header() {
-  const { appState, toggleTheme, exportData, importData } = useStudy();
+  const { appState, toggleTheme, importData } = useStudy();
   const [showPDFModal, setShowPDFModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);

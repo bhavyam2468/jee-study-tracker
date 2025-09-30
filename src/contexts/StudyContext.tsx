@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { AppState, ActionType, CompletionLevel, ProgressStats } from '../types';
 import { loadAppState, saveAppState, validateImportData } from '../services/storageService';

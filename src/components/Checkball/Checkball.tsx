@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import type { CompletionLevel } from '../../types';
 import { useLongPress } from '../../hooks/useLongPress';
 import styles from './Checkball.module.css';
