@@ -1,0 +1,147 @@
+.checkballContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.checkball {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--checkball-border);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.checkball:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.checkball:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.checkballInner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transition: all 0.3s ease-in-out;
+}
+
+.sliderOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sliderContainer {
+  background: var(--bg-gradient-start);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  min-width: 300px;
+  border: 1px solid var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-sm);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  margin-bottom: var(--spacing-md);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--glow-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: var(--accent-green);
+  transform: scale(1.1);
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--glow-color);
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.slider::-moz-range-thumb:hover {
+  background: var(--accent-green);
+  transform: scale(1.1);
+}
+
+.sliderLabel {
+  text-align: center;
+  margin: var(--spacing-md) 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--checkball-fill);
+}
+
+.closeButton {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--accent-blue);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.closeButton:hover {
+  background: var(--accent-green);
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.closeButton:active {
+  opacity: 0.9;
+}

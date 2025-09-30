@@ -1,0 +1,222 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-gradient-start);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-md) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.iconButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.iconButton:active {
+  opacity: 0.8;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modalContent {
+  background: var(--bg-gradient-start);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  min-width: 400px;
+  border: 1px solid var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+  animation: slideIn 0.3s ease-out;
+}
+
+.modalContent h2 {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+}
+
+.modalContent p {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-secondary);
+}
+
+.modalButtons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.modalButton {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: var(--accent-blue);
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modalButton:hover {
+  background: var(--accent-green);
+  box-shadow: var(--shadow-glow);
+}
+
+.closeButton {
+  width: 100%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.helpModal {
+  background: var(--bg-gradient-start);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+  animation: slideIn 0.3s ease-out;
+}
+
+.helpModal h2 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+}
+
+.helpContent {
+  margin-bottom: var(--spacing-lg);
+}
+
+.helpItem {
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.helpItem strong {
+  display: block;
+  color: var(--accent-green);
+  margin-bottom: var(--spacing-xs);
+  font-size: 0.95rem;
+}
+
+.helpItem p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .iconButton {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 1rem;
+  }
+  
+  .modalContent {
+    min-width: 300px;
+    margin: var(--spacing-md);
+  }
+  
+  .modalButtons {
+    flex-direction: column;
+  }
+}
+.notification {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background: var(--accent-green);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  animation: slideInRight 0.3s ease-in-out;
+  font-weight: 500;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

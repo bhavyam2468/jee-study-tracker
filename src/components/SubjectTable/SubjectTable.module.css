@@ -1,0 +1,386 @@
+.tableContainer {
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.tableContainer:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.tableHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.headerButtons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.subjectName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.addButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: var(--accent-blue);
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addButton:hover {
+  background: var(--accent-green);
+  box-shadow: var(--shadow-glow);
+}
+
+.deleteButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteButton:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tableWrapper::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: var(--radius-sm);
+}
+
+.tableWrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing-md);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table th {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.chapterColumn {
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.columnHeader {
+  min-width: 100px;
+  text-align: center;
+  position: relative;
+}
+
+.columnHeaderContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.deleteColumnButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 2px;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columnHeader:hover .deleteColumnButton {
+  opacity: 1;
+}
+
+.deleteColumnButton:hover {
+  color: #ef4444;
+}
+
+.chapterRow {
+  transition: background var(--transition-fast);
+}
+
+.chapterRow:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.chapterName {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.chapterNameContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.deleteChapterButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 2px;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chapterRow:hover .deleteChapterButton {
+  opacity: 1;
+}
+
+.deleteChapterButton:hover {
+  color: #ef4444;
+}
+
+.editingContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  width: 100%;
+}
+
+.editInput {
+  flex: 1;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.editInput:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.1);
+}
+
+.saveButton {
+  padding: 6px;
+  background: var(--accent-green);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-in-out;
+  flex-shrink: 0;
+}
+
+.saveButton:hover {
+  background: #0d9488;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.saveButton svg {
+  color: white;
+}
+
+.chapterNameContent span,
+.columnHeaderContent span {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  user-select: none;
+}
+
+.chapterNameContent span:hover,
+.columnHeaderContent span:hover {
+  color: var(--accent-blue);
+}
+
+.checkballCell {
+  text-align: center;
+}
+
+.addChapterButton {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-weight: 600;
+}
+
+.addChapterButton:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--accent-blue);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modalContent {
+  background: var(--bg-gradient-start);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  min-width: 400px;
+  border: 1px solid var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+  animation: slideIn 0.3s ease-out;
+}
+
+.modalContent h3 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-primary);
+}
+
+.input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+.modalButtons {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.primaryButton {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: var(--accent-blue);
+  border: none;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.primaryButton:hover {
+  background: var(--accent-green);
+  box-shadow: var(--shadow-glow);
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.secondaryButton:hover {
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+  .tableHeader {
+    padding: var(--spacing-md);
+  }
+  
+  .subjectName {
+    font-size: 1.2rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: var(--spacing-sm);
+  }
+  
+  .chapterColumn {
+    min-width: 150px;
+  }
+  
+  .modalContent {
+    min-width: 300px;
+    margin: var(--spacing-md);
+  }
+}
