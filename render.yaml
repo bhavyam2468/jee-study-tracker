@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: jee-study-tracker
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
